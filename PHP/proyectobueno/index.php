@@ -60,8 +60,8 @@
 										<td><input type="text" name="usuario" id="usuario" placeholder="usuario">
 									</tr>
 									<tr>
-										<td>Contraseña:</td>
-										<td><input type="password" name="contraseÃ±a" id="contraseÃ±a" placeholder="contraseÃ±a"></td>
+										<td>Clave:</td>
+										<td><input type="password" name="clave" id="clave" placeholder="clave"></td>
 									</tr>
 									
 									</table>

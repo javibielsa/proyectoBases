@@ -2,7 +2,7 @@
 session_start();
 // Recuperar datos del formulario
 $dni=$_POST['usuario'];
-$cla=$_POST['password'];
+$cla=$_POST['clave'];
 
 include("conexion.php");
 
