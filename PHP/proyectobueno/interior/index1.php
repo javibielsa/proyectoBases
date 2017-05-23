@@ -86,20 +86,25 @@
 									//leemos el contenido de $registros
 									while ($linea=mysqli_fetch_array($registros))
 									{
-										echo "<tr><td>$linea[aparato]</td><td>$linea[modelo]</td><td>$linea[marca]</td><td>$linea[cantidad]</td><td>$linea[ubicacion]</td></tr>";
-										echo "<tr><td colspan='7'><hr></td></tr>";
+										echo "<tr><td>$linea[aparato]</td><td>$linea[modelo]</td><td>$linea[marca]</td><td>$linea[cantidad]</td><td>$linea[ubicacion]</td>
+										<td><a href='bormateriales.php?clave=$linea[aparato]'><img src='./borrar.jpg' width='30'></a></td></tr>";
+										echo "<tr><td colspan='7'></td></tr>";
 									}
 									
 									?>
-									<td colspan="2" align="center">
-										<input type="submit" value="Borrar">
-									</td>
-
 								</th>
-
 
 				            </tr>
 				       </table>	
+				       <form name="regmaterial" id="regmaterial" method="post" action="plantillaMaterial.php">
+
+								<table align="center" width="40%">
+									<tr>
+										<td><input type="submit" value="Registrar material" name="regmaterial" id="regmaterial" >
+									</tr>
+								</table>
+						</form>
+
        			</div>
        					
 			</div>
