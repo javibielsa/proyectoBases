@@ -76,20 +76,26 @@
 				                <th>Ubicacion</th>
 				            </tr>
 				            <tr>
-<?php
-include("conexion.php");
-//creamos la consulta
-$sql="SELECT m.aparato, m.modelo, ma.marca, m.cantidad, u.ubicacion FROM materiales as m, marca as ma, ubicacion as u WHERE m.idUbicacion = u.idUbicacion AND m.idMarca = ma.idMarca;";
-//ejecutamos la consulta
-$registros=mysqli_query($conexion,$sql);
-//leemos el contenido de $registros
-while ($linea=mysqli_fetch_array($registros))
-{
-	echo "<tr><td>$linea[aparato]</td><td>$linea[modelo]</td><td>$linea[marca]</td><td>$linea[cantidad]</td><td>$linea[ubicacion]</td></tr>";
-	echo "<tr><td colspan='7'><hr></td></tr>";
-}
+				            	<th>
+									<?php	
+									include("conexion.php");
+									//creamos la consulta
+									$sql="SELECT m.aparato, m.modelo, ma.marca, m.cantidad, u.ubicacion FROM materiales as m, marca as ma, ubicacion as u WHERE m.idUbicacion = u.idUbicacion AND m.idMarca = ma.idMarca;";
+									//ejecutamos la consulta
+									$registros=mysqli_query($conexion,$sql);
+									//leemos el contenido de $registros
+									while ($linea=mysqli_fetch_array($registros))
+									{
+										echo "<tr><td>$linea[aparato]</td><td>$linea[modelo]</td><td>$linea[marca]</td><td>$linea[cantidad]</td><td>$linea[ubicacion]</td></tr>";
+										echo "<tr><td colspan='7'><hr></td></tr>";
+									}
+									
+									?>
+									<td colspan="2" align="center">
+										<input type="submit" value="Borrar">
+									</td>
 
-?>
+								</th>
 
 
 				            </tr>
@@ -198,18 +204,18 @@ while($linea=mysqli_fetch_array($registros))
 						<form class="form-horizontal">
 							<div class="form-group">
 								<div class="col-sm-4" style="position:relative">
-									<input type="text" name="Name" data-new-placeholder="Â¿Cual es tu nombre?" class="form-control label_better" placeholder="Nombre">
+									<input type="text" name="Name" data-new-placeholder="Ã‚Â¿Cual es tu nombre?" class="form-control label_better" placeholder="Nombre">
 								</div>
 								<div class="col-sm-4">
 									<input type="text" name="Email" class="form-control label_better" placeholder="correo">
 								</div>
 								<div class="col-sm-4">
-									<input type="text" name="Phone" class="form-control label_better" placeholder="telÃƒÂ©fono">
+									<input type="text" name="Phone" class="form-control label_better" placeholder="telÃƒÆ’Ã‚Â©fono">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<textarea class="form-control label_better" placeholder="introduce aquÃƒÂ­ tu comentario." rows="7"></textarea>
+									<textarea class="form-control label_better" placeholder="introduce aquÃƒÆ’Ã‚Â­ tu comentario." rows="7"></textarea>
 								</div>
 							</div>
 							<div class="form-group commands">
