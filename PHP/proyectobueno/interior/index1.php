@@ -202,29 +202,29 @@ while($linea=mysqli_fetch_array($registros))
 			<div class="branded-section contact-form">
 				<div class="masked">
 					<div class="container">
+						<form class="form-horizontal" name="observaciones" id="observaciones" method="post" action="rObservaciones.php">
 						<div class="heading">
 							<h1 class="light-font">Observaciones</h1>
 							
 						</div>
-						<form class="form-horizontal">
 							<div class="form-group">
 								<div class="col-sm-4" style="position:relative">
-									<input type="text" name="Name" data-new-placeholder="Ã‚Â¿Cual es tu nombre?" class="form-control label_better" placeholder="Nombre">
+									<input type="text" name="nombre" id="nombre" class="form-control label_better" placeholder="nombre">
 								</div>
 								<div class="col-sm-4">
-									<input type="text" name="Email" class="form-control label_better" placeholder="correo">
+									<input type="text" name="correo" id="correo" class="form-control label_better" placeholder="correo">
 								</div>
 								<div class="col-sm-4">
-									<input type="text" name="Phone" class="form-control label_better" placeholder="telÃƒÆ’Ã‚Â©fono">
+									<input type="text" name="telefono" id="telefono" class="form-control label_better" placeholder="telefono">
 								</div>
 							</div>
-							<div class="form-group">
+							<div class="form-group" >
 								<div class="col-sm-12">
-									<textarea class="form-control label_better" placeholder="introduce aquÃƒÆ’Ã‚Â­ tu comentario." rows="7"></textarea>
+									<input type="text" name="comentario" id="comentario" class="form-control label_better"  placeholder="comentario">
 								</div>
 							</div>
 							<div class="form-group commands">
-								<button class="btn btn-primary">Enviar mensaje</button>
+								<input type="submit" value="Enviar mensaje">
 							</div>
 						</form>
 					</div>
