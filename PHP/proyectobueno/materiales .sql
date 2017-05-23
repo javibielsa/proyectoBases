@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-05-2017 a las 09:04:18
+-- Tiempo de generación: 23-05-2017 a las 10:56:58
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -60,7 +60,14 @@ CREATE TABLE IF NOT EXISTS `marca` (
   `idMarca` int(11) NOT NULL AUTO_INCREMENT,
   `marca` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`idMarca`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `marca`
+--
+
+INSERT INTO `marca` (`idMarca`, `marca`) VALUES
+(1, 'asdgfsdaf');
 
 -- --------------------------------------------------------
 
@@ -88,7 +95,14 @@ CREATE TABLE IF NOT EXISTS `materiales` (
   UNIQUE KEY `idMarca` (`idMarca`),
   UNIQUE KEY `idAutorizador` (`idAutorizador`),
   UNIQUE KEY `idUbicacion` (`idUbicacion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `materiales`
+--
+
+INSERT INTO `materiales` (`idmaterial`, `aparato`, `idProveedor`, `idMarca`, `modelo`, `numSerie`, `cantidad`, `numInterno`, `idAutorizador`, `idUbicacion`, `garantia`, `fechaBaja`, `observaciones`, `fechaEntrada`) VALUES
+(1, 'dsfagdfgdfsa', '1', 1, 'gfhbfsghadfg', 'gfhsgfdhsfd', 4, 'sdafgasdfasd', '123124', 1, 'sdafasdg', '0000-00-00', '', '2017-05-19');
 
 -- --------------------------------------------------------
 
@@ -102,6 +116,28 @@ CREATE TABLE IF NOT EXISTS `monitores` (
   `tipo` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   UNIQUE KEY `idReferencia` (`idReferencia`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `observaciones`
+--
+
+CREATE TABLE IF NOT EXISTS `observaciones` (
+  `idObservaciones` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `correo` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `telefono` int(9) NOT NULL,
+  `comentario` longtext COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`idObservaciones`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
+
+--
+-- Volcado de datos para la tabla `observaciones`
+--
+
+INSERT INTO `observaciones` (`idObservaciones`, `nombre`, `correo`, `telefono`, `comentario`) VALUES
+(15, 'Sergio', 'sanzestradasergio@gm', 658134523, 'Ya funciona NoÃ©');
 
 -- --------------------------------------------------------
 
@@ -132,6 +168,13 @@ CREATE TABLE IF NOT EXISTS `proveedores` (
   `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`idProveedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`idProveedor`, `nombre`) VALUES
+('1', 'asdfasdgasdfg');
 
 -- --------------------------------------------------------
 
@@ -189,7 +232,14 @@ CREATE TABLE IF NOT EXISTS `ubicacion` (
   `idUbicacion` int(11) NOT NULL AUTO_INCREMENT,
   `ubicacion` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`idUbicacion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `ubicacion`
+--
+
+INSERT INTO `ubicacion` (`idUbicacion`, `ubicacion`) VALUES
+(1, 'asdfgadgadfg');
 
 -- --------------------------------------------------------
 
@@ -205,6 +255,15 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `tipoUsuario` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`dni`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`dni`, `nombre`, `clave`, `fechaNacimiento`, `tipoUsuario`) VALUES
+('123', '123', '123', '2017-05-19', 'Profesor'),
+('123124', 'gfhadfgsdf', 'adfgdfgas', '2017-05-11', 'asdfasdf'),
+('12345678Z', '123', '123', '2017-05-13', 'Alumno');
 
 --
 -- Restricciones para tablas volcadas
