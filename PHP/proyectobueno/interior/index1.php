@@ -75,7 +75,6 @@
 				                <th>Cantidad</th>
 				                <th>Ubicacion</th>
 				            </tr>
-				            
 				            <tr>
 <?php
 include("conexion.php");
@@ -89,8 +88,9 @@ while ($linea=mysqli_fetch_array($registros))
 	echo "<tr><td>$linea[aparato]</td><td>$linea[modelo]</td><td>$linea[marca]</td><td>$linea[cantidad]</td><td>$linea[ubicacion]</td></tr>";
 	echo "<tr><td colspan='7'><hr></td></tr>";
 }
-mysqli_close($conexion);
+
 ?>
+
 
 				            </tr>
 				       </table>	
@@ -124,43 +124,64 @@ mysqli_close($conexion);
 										<td>Fecha de solucion: </td>
 										<td><input type="date" name="fechaso" id="fechaso" >
 									</tr>
-									
-									
-									
-									
-								</table>
-								
+						            <tr>
+						                <td>Aparato</td>
+						                <td>
+						                	<select name="select">
+											  <option value="">
+<?php
+$sql="SELECT * FROM materiales";
+$registros=mysqli_query($conexion,$sql);
+while($linea=mysqli_fetch_array($registros))
+{
+	echo"<option value='$linea[idmaterial]'>$linea[aparato]";	
+}
+?>
+										
+											</select>
+										</td>
+						                <td>Modelo</td>
+						                <td>
+						                	<select name="select2">
+						                		<option value="">
+<?php
+$sql="SELECT * FROM materiales";
+$registros=mysqli_query($conexion,$sql);
+while($linea=mysqli_fetch_array($registros))
+{
+	
+	echo"<option value='$linea[idmaterial]'>$linea[modelo]";
+}
+?>
+
+											</select>
+										</td>
+
+						            </tr>
 									<tr>
 										<td colspan="2" align="center">
 											<input type="submit" value="registrar incidencia">
 										</td>
 									</tr>
-								</form>										
-
-	
-				            
-				            <tr>
-				                <th>Aparato</th>
-				                <th>Modelo</th>
-				                <th>Marca</th>
-				                <th>Cantidad</th>
-				                <th>Ubicacion</th>
-				            </tr>
-				            
-				            <tr>
-				                <td>TABLA</td>
-				            </tr>
-				      </table>	
+									
+									
+								</table>
+						</form>	
+					</table>
+		
 
 				</div>
+			</div>
+				
 		</section>
 		<section id="about">
 			<div class="container">
 				<div class="heading">
 					<div>Revisiones</div>
 					
-					<div class="divider">
-									
+					</div>
+			</div>
+				
 		</section>
 		<section id="clients">
 			<div class="container">
@@ -177,18 +198,18 @@ mysqli_close($conexion);
 						<form class="form-horizontal">
 							<div class="form-group">
 								<div class="col-sm-4" style="position:relative">
-									<input type="text" name="Name" data-new-placeholder="¿Cual es tu nombre?" class="form-control label_better" placeholder="Nombre">
+									<input type="text" name="Name" data-new-placeholder="Â¿Cual es tu nombre?" class="form-control label_better" placeholder="Nombre">
 								</div>
 								<div class="col-sm-4">
 									<input type="text" name="Email" class="form-control label_better" placeholder="correo">
 								</div>
 								<div class="col-sm-4">
-									<input type="text" name="Phone" class="form-control label_better" placeholder="telÃ©fono">
+									<input type="text" name="Phone" class="form-control label_better" placeholder="telÃƒÂ©fono">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<textarea class="form-control label_better" placeholder="introduce aquÃ­ tu comentario." rows="7"></textarea>
+									<textarea class="form-control label_better" placeholder="introduce aquÃƒÂ­ tu comentario." rows="7"></textarea>
 								</div>
 							</div>
 							<div class="form-group commands">
@@ -216,5 +237,8 @@ mysqli_close($conexion);
 		Grid.init();
 	});
 	</script>
+	<?php
+	mysqli_close($conexion);
+	?>
 </body>
 </html>
