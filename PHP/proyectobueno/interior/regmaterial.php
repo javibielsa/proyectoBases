@@ -22,7 +22,7 @@ include("conexion.php");
 $sql="INSERT INTO materiales(aparato,idProveedor,idMarca,modelo,numSerie,cantidad,numInterno,idAutorizador,idUbicacion,garantia,fechaBaja,observaciones,fechaEntrada) VALUES ('$ap','$pro','$mar','$mod','$ser','$cant','$nint','$aut','$ubi','$gar','$fba','$obs', '$fal')";
 
 // ejecutamos la consulta
-mysqli_query($conexion,$sql) or die("Error en la consulta de inserción $sql");
+mysqli_query($conexion,$sql) or die("Error en la consulta de insercion $sql");
 // cerramos la conexion
 mysqli_close($conexion);
 // redirigimos a la pagina inicial
