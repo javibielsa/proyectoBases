@@ -1,14 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 <HEAD>
-<TITLE> formalumnos.php </TITLE>
+<TITLE> registrar material </TITLE>
 <META NAME="Generator" CONTENT="EditPlus">
 <META NAME="Author" CONTENT="">
 <META NAME="Keywords" CONTENT="">
 <META NAME="Description" CONTENT="">
+<link rel="stylesheet" href="css1/main.css" />
+
+
 </HEAD>
 
 <BODY>
+<div id="wrapper">
+
 <?php
 session_start();
 include("conexion.php");
@@ -16,7 +21,7 @@ include("conexion.php");
 <form name="alumnos" id="alumnos" method="post" action="regmaterial.php">
 <table align="center" width="50%">
 <tr>
-	<td colspan="2"><img src="./imagenes/logosz.jpg" width="500"></td>
+	<td colspan="2" align="center"><img src="./img/logosz.jpg" width="500"></td>
 </tr>
 <tr>
 	<td colspan="2" align="center"><h2> RESGISTRAR MATERIAL</h2></td>
@@ -131,5 +136,6 @@ include("conexion.php");
 </tr>
 </table>
 </form>
+</div>
 </BODY>
 </HTML>

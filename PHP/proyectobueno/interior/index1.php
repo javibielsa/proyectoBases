@@ -87,7 +87,7 @@
 									while ($linea=mysqli_fetch_array($registros))
 									{
 										echo "<tr><td>$linea[aparato]</td><td>$linea[modelo]</td><td>$linea[marca]</td><td>$linea[cantidad]</td><td>$linea[ubicacion]</td>
-										<td><a href='bormateriales.php?clave=$linea[aparato]'><img src='./borrar.jpg' width='30'></a></td></tr>";
+										<td><a href='bormateriales.php?clave=$linea[aparato]'><img src='./img/borrar.jpg' width='30'></a></td></tr>";
 										echo "<tr><td colspan='7'></td></tr>";
 									}
 									
@@ -154,7 +154,7 @@ while($linea=mysqli_fetch_array($registros))
 									</tr>
 									<tr>
 										<td colspan="2" align="center">
-											<input type="submit" value="registrar incidencia">
+											<input type="submit" value="Registrar incidencia">
 										</td>
 									</tr>										
 								</table>
@@ -174,29 +174,29 @@ while($linea=mysqli_fetch_array($registros))
 			<div class="branded-section contact-form">
 				<div class="masked">
 					<div class="container">
-						<form class="form-horizontal" name="observaciones" id="observaciones" method="post" action="rObservaciones.php">
 						<div class="heading">
 							<h1 class="light-font">Observaciones</h1>
 							
 						</div>
+						<form class="form-horizontal">
 							<div class="form-group">
 								<div class="col-sm-4" style="position:relative">
-									<input type="text" name="nombre" id="nombre" class="form-control label_better" placeholder="nombre">
+									<input type="text" name="Name" data-new-placeholder="Ã‚Â¿Cual es tu nombre?" class="form-control label_better" placeholder="Nombre">
 								</div>
 								<div class="col-sm-4">
-									<input type="text" name="correo" id="correo" class="form-control label_better" placeholder="correo">
+									<input type="text" name="Email" class="form-control label_better" placeholder="correo">
 								</div>
 								<div class="col-sm-4">
-									<input type="text" name="telefono" id="telefono" class="form-control label_better" placeholder="telefono">
+									<input type="text" name="Phone" class="form-control label_better" placeholder="telÃƒÆ’Ã‚Â©fono">
 								</div>
 							</div>
-							<div class="form-group" >
+							<div class="form-group">
 								<div class="col-sm-12">
-									<input type="text" name="comentario" id="comentario" class="form-control label_better"  placeholder="comentario">
+									<textarea class="form-control label_better" placeholder="introduce aquÃƒÆ’Ã‚Â­ tu comentario." rows="7"></textarea>
 								</div>
 							</div>
 							<div class="form-group commands">
-								<input type="submit" value="Enviar mensaje">
+								<button class="btn btn-primary">Enviar mensaje</button>
 							</div>
 						</form>
 					</div>
