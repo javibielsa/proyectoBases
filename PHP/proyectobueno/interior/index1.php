@@ -115,7 +115,7 @@
 					<div>Incidencias</div>
 					<table class="tablamateriales">
 					
-					<form name="incidencias" id="incidencias" method="post" action="//registrarIncidencia.php">
+					<form name="incidencias" id="incidencias" method="post" action="rIncidencias.php">
 
 								<table align="center" width="40%">
 									<tr>
@@ -136,61 +136,33 @@
 										<td><input type="date" name="fechaso" id="fechaso" >
 									</tr>
 						            <tr>
-						                <td>Aparato</td>
+						                <td>Aparato y Modelo</td>
 						                <td>
-						                	<select name="select">
+						                	<select name="sel" id="sel">
 											  <option value="">
 <?php
 $sql="SELECT * FROM materiales";
 $registros=mysqli_query($conexion,$sql);
 while($linea=mysqli_fetch_array($registros))
 {
-	echo"<option value='$linea[idmaterial]'>$linea[aparato]";
+	echo"<option value='$linea[idmaterial]'>$linea[aparato] , $linea[modelo]";	
 }
 ?>
 										
 											</select>
 										</td>
-						                <td>Modelo</td>
-						                <td>
-						                	<select name="select2">
-						                		<option value="">
-<?php
-$sql="SELECT * FROM materiales";
-$registros=mysqli_query($conexion,$sql);
-while($linea=mysqli_fetch_array($registros))
-{
-	
-	echo"<option value='$linea[idmaterial]'>$linea[modelo]";
-}
-?>
-
-											</select>
-										</td>
-
-						            </tr>
+									</tr>
 									<tr>
 										<td colspan="2" align="center">
 											<input type="submit" value="Registrar incidencia">
 										</td>
-									</tr>
-									
-									
+									</tr>										
 								</table>
 						</form>	
 					</table>
 		
 
 				</div>
-			</div>
-				
-		</section>
-		<section id="about">
-			<div class="container">
-				<div class="heading">
-					<div>Revisiones</div>
-					
-					</div>
 			</div>
 				
 		</section>
